@@ -1,5 +1,5 @@
 streamlit>=1.37
-tensorflow==2.16.1
+tensorflow
 numpy>=1.26,<2.0
 pillow>=10.3
 requests>=2.31
