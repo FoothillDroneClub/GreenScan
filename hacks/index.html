@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Optimism Trash Tracker</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Optimism Trash Tracker</h1>
+      <div class="scoreboard">
+        <div class="points">
+          <span class="label">Eco Points</span>
+          <span id="totalPoints" class="value">0</span>
+        </div>
+        <div class="badge" id="badgeDisplay">🌱 Starter</div>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <section class="camera-section">
+        <video id="videoFeed" autoplay playsinline></video>
+        <canvas id="captureCanvas" class="hidden"></canvas>
+        <div class="camera-actions">
+          <button id="captureButton" class="primary-btn">Snap Trash Photo</button>
+          <input type="file" id="uploadInput" accept="image/*" capture="environment" />
+        </div>
+      </section>
+
+      <section class="analysis-section" aria-live="polite">
+        <div id="statusMessage" class="status">Point your camera at an item to recycle.</div>
+        <div class="analysis-card hidden" id="analysisCard">
+          <h2 id="itemName">Item Name</h2>
+          <p class="category" id="itemCategory">Category: —</p>
+          <p class="emissions" id="itemEmission">Estimated CO₂e: — kg</p>
+          <p class="points-earned" id="pointsEarned">Eco Points Earned: 0</p>
+        </div>
+      </section>
+
+      <section class="leaderboard-section">
+        <h2>Leaderboard</h2>
+        <ol id="leaderboardList" class="leaderboard-list">
+          <!-- Leaderboard entries injected here -->
+        </ol>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>Scan, learn, and level up your eco journey 🌍✨</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.14.0/dist/tf.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.0/dist/mobilenet.min.js" defer></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

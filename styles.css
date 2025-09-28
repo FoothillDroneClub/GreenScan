@@ -1,0 +1,227 @@
+:root {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #0b1f1f;
+  background-color: #f4fbf9;
+  --accent: #1abc9c;
+  --accent-dark: #12806a;
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header.app-header {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: center;
+  background: linear-gradient(160deg, #1abc9c, #16a085);
+  color: #fff;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  backdrop-filter: blur(6px);
+}
+
+.points .label {
+  display: block;
+  font-size: 0.65rem;
+  opacity: 0.8;
+}
+
+.points .value {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.badge {
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+}
+
+main.app-main {
+  flex: 1;
+  padding: 1rem 1.2rem 4.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.camera-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+video#videoFeed {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 9 / 16;
+  border-radius: 18px;
+  background: #d7ebea;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+.canvas {
+  display: none;
+}
+
+.camera-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+#uploadInput {
+  display: none;
+}
+
+.primary-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(26, 188, 156, 0.3);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.primary-btn:active {
+  transform: translateY(2px);
+  background: var(--accent-dark);
+}
+
+.analysis-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.status {
+  color: #3c6e71;
+  font-size: 0.95rem;
+  background: rgba(26, 188, 156, 0.08);
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+}
+
+.analysis-card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.analysis-card h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.analysis-card .category {
+  font-size: 0.95rem;
+  color: #3c6e71;
+}
+
+.analysis-card .emissions {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.analysis-card .points-earned {
+  font-size: 1rem;
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+.leaderboard-section {
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.leaderboard-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.leaderboard-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 0.85rem;
+  background: rgba(26, 188, 156, 0.08);
+  border-radius: 14px;
+}
+
+.leaderboard-item .name {
+  font-weight: 600;
+}
+
+.leaderboard-item .points {
+  font-size: 0.95rem;
+  color: var(--accent-dark);
+}
+
+footer.app-footer {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #53727c;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media screen and (min-width: 540px) {
+  header.app-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .scoreboard {
+    max-width: 240px;
+  }
+}

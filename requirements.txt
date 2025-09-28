@@ -1,0 +1,14 @@
+streamlit>=1.37
+tensorflow==2.16.1
+numpy>=1.26,<2.0
+pillow>=10.3
+requests>=2.31
+torch>=2.3
+torchvision>=0.18
+timm>=0.9
+open-clip-torch>=2.23
+accelerate>=0.30
+safetensors>=0.4
+sentencepiece>=0.1
+ultralytics>=8.2
+opencv-python<4.11
